@@ -1,0 +1,14 @@
+me/crunchycars/customEnchants/CustomEnchantmentManager.class
+me/crunchycars/customEnchants/VitalityEnchantmentCommand.class
+me/crunchycars/customEnchants/CustomEnchantment.class
+me/crunchycars/customEnchants/BleedEnchantmentCommand.class
+me/crunchycars/customEnchants/CustomEnchantmentListener.class
+me/crunchycars/customEnchants/SilenceManager.class
+me/crunchycars/customEnchants/SwiftnessEnchantmentCommand.class
+me/crunchycars/customEnchants/CustomEnchantmentListener$BleedTask.class
+me/crunchycars/customEnchants/CustomEnchants.class
+me/crunchycars/customEnchants/VitalityEnchantment.class
+me/crunchycars/customEnchants/SilenceEnchantment.class
+me/crunchycars/customEnchants/SwiftnessEnchantment.class
+me/crunchycars/customEnchants/SilenceEnchantmentCommand.class
+me/crunchycars/customEnchants/BleedEnchantment.class

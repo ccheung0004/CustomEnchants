@@ -1,0 +1,59 @@
+name: CustomEnchants
+version: 1.0
+api-version: 1.13
+main: me.crunchycars.customEnchants.CustomEnchants
+commands:
+  swiftnessEnchant:
+    description: "Gives the player a Swiftness I enchanted book with a specified success rate."
+    usage: "/swiftnessEnchant <successRate>"
+    permission: swiftness.enchant
+  vitality1:
+    description: "Gives the player a Vitality I enchanted book with a specified success rate."
+    usage: "/vitality1 <successRate>"
+    permission: vitality.enchant
+  vitality2:
+    description: "Gives the player a Vitality II enchanted book with a specified success rate."
+    usage: "/vitality2 <successRate>"
+    permission: vitality.enchant
+  vitality3:
+    description: "Gives the player a Vitality III enchanted book with a specified success rate."
+    usage: "/vitality3 <successRate>"
+    permission: vitality.enchant
+  bleed1:
+    description: "Gives the player a Bleed I enchanted book."
+    usage: "/bleed1 <successRate>"
+    permission: bleed.enchant
+  bleed2:
+    description: "Gives the player a Bleed II enchanted book."
+    usage: "/bleed2 <successRate>"
+    permission: bleed.enchant
+  bleed3:
+    description: "Gives the player a Bleed III enchanted book."
+    usage: "/bleed3 <successRate>"
+    permission: bleed.enchant
+  silence1:
+    description: "Gives the player a Silence I enchanted book with a specified success rate."
+    usage: "/silence1 <successRate>"
+    permission: customenchants.silence
+  silence2:
+    description: "Gives the player a Silence II enchanted book with a specified success rate."
+    usage: "/silence2 <successRate>"
+    permission: customenchants.silence
+  silence3:
+    description: "Gives the player a Silence III enchanted book with a specified success rate."
+    usage: "/silence3 <successRate>"
+    permission: customenchants.silence
+
+permissions:
+  swiftness.enchant:
+    description: "Allows the use of the Swiftness enchantment command."
+    default: op
+  vitality.enchant:
+    description: "Allows the use of the Vitality enchantment commands."
+    default: op
+  bleed.enchant:
+    description: "Allows the use of the Bleed enchantment commands."
+    default: op
+  customenchants.silence:
+    description: "Allows the use of the Silence enchantment commands."
+    default: op
