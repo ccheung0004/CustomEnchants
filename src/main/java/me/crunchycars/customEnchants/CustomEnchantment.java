@@ -1,43 +1,38 @@
 package me.crunchycars.customEnchants;
 
 import org.bukkit.Material;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class CustomEnchantment {
 
     private final String name;
+    private final int tier;
 
-    public CustomEnchantment(String name) {
+    public CustomEnchantment(String name, int tier) {
         this.name = name;
+        this.tier = tier;
     }
 
     public String getName() {
         return name;
     }
 
-    // Abstract method that subclasses must implement
-    public abstract boolean canApplyTo(Material material);
-
-    public void applyToItem(ItemStack item) {
-        ItemMeta meta = item.getItemMeta();
-        List<String> lore = meta.hasLore() ? meta.getLore() : new ArrayList<>();
-        lore.add(name);
-        meta.setLore(lore);
-        item.setItemMeta(meta);
+    public int getTier() {
+        return tier;
     }
 
+    // Abstract methods to be implemented by subclasses
+    public abstract boolean canApplyTo(Material material);
+
+    public abstract void applyEffect(Player player, LivingEntity target, ItemStack item);
+
     public boolean isAppliedTo(ItemStack item) {
-        if (item.hasItemMeta()) {
-            ItemMeta meta = item.getItemMeta();
-            if (meta.hasLore()) {
-                for (String lore : meta.getLore()) {
-                    if (lore.equals(name)) {
-                        return true;
-                    }
+        if (item.hasItemMeta() && item.getItemMeta().hasLore()) {
+            for (String lore : item.getItemMeta().getLore()) {
+                if (lore.equals(name)) {
+                    return true;
                 }
             }
         }

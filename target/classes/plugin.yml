@@ -32,18 +32,21 @@ commands:
     usage: "/bleed3 <successRate>"
     permission: bleed.enchant
   silence1:
-    description: "Gives the player a Silence I enchanted book with a specified success rate."
+    description: "Gives the player a Silence I enchanted book."
     usage: "/silence1 <successRate>"
-    permission: customenchants.silence
+    permission: silence.enchant
   silence2:
-    description: "Gives the player a Silence II enchanted book with a specified success rate."
+    description: "Gives the player a Silence II enchanted book."
     usage: "/silence2 <successRate>"
-    permission: customenchants.silence
+    permission: silence.enchant
   silence3:
-    description: "Gives the player a Silence III enchanted book with a specified success rate."
+    description: "Gives the player a Silence III enchanted book."
     usage: "/silence3 <successRate>"
-    permission: customenchants.silence
-
+    permission: silence.enchant
+  divineLightning:
+    description: "Gives the player a Divine Lightning enchanted book."
+    usage: "/divineLightning <successRate>"
+    permission: divineLightning.enchant
 permissions:
   swiftness.enchant:
     description: "Allows the use of the Swiftness enchantment command."
@@ -54,6 +57,9 @@ permissions:
   bleed.enchant:
     description: "Allows the use of the Bleed enchantment commands."
     default: op
-  customenchants.silence:
-    description: "Allows the use of the Silence enchantment commands."
+  silence.enchant:
+    description: "Allows the use of the Silence enchantment command."
+    default: op
+  divineLightning.enchant:
+    description: "Allows the use of the Divine Lightning enchantment command."
     default: op

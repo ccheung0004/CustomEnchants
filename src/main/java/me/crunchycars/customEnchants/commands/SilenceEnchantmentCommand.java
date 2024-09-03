@@ -1,5 +1,6 @@
-package me.crunchycars.customEnchants;
+package me.crunchycars.customEnchants.commands;
 
+import me.crunchycars.customEnchants.SilenceEnchantment;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,12 +11,12 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
 
-public class SwiftnessEnchantmentCommand implements CommandExecutor {
+public class SilenceEnchantmentCommand implements CommandExecutor {
 
-    private final SwiftnessEnchantment swiftnessEnchantment;
+    private final SilenceEnchantment enchantment;
 
-    public SwiftnessEnchantmentCommand(SwiftnessEnchantment swiftnessEnchantment) {
-        this.swiftnessEnchantment = swiftnessEnchantment;
+    public SilenceEnchantmentCommand(SilenceEnchantment enchantment) {
+        this.enchantment = enchantment;
     }
 
     @Override
@@ -27,7 +28,7 @@ public class SwiftnessEnchantmentCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (!player.hasPermission("swiftness.enchant")) {
+        if (!player.hasPermission("silence.enchant")) {
             player.sendMessage("§cYou do not have permission to use this command.");
             return true;
         }
@@ -51,16 +52,16 @@ public class SwiftnessEnchantmentCommand implements CommandExecutor {
         ItemStack book = new ItemStack(Material.ENCHANTED_BOOK);
         ItemMeta meta = book.getItemMeta();
         if (meta != null) {
-            meta.setDisplayName("§6Swiftness 1");
+            meta.setDisplayName(enchantment.getName());
             meta.setLore(Arrays.asList(
                     "§7Success Rate: §a" + successRate + "%",
-                    "§7Grants Speed I when applied to Diamond Boots"
+                    "§7Has a chance to silence the target, preventing their armor enchantments"
             ));
             book.setItemMeta(meta);
         }
 
         player.getInventory().addItem(book);
-        player.sendMessage("§aYou have received a Swiftness 1 enchantment book with " + successRate + "% success rate.");
+        player.sendMessage("§aYou have received a " + enchantment.getName() + " enchantment book with " + successRate + "% success rate.");
 
         return true;
     }

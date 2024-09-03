@@ -1,48 +1,27 @@
 package me.crunchycars.customEnchants;
 
 import org.bukkit.Material;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class SwiftnessEnchantment extends CustomEnchantment {
 
     public SwiftnessEnchantment() {
-        super("§6Swiftness I");
+        super("§6Swiftness 1", 1);
     }
 
     @Override
     public boolean canApplyTo(Material material) {
-        return material == Material.DIAMOND_BOOTS;
+        return material == Material.DIAMOND_BOOTS; // Swiftness can be applied only to diamond boots
     }
 
     @Override
-    public void applyToItem(ItemStack item) {
-        ItemMeta meta = item.getItemMeta();
-
-        if (meta != null) {
-            List<String> lore = meta.hasLore() ? meta.getLore() : new ArrayList<>();
-
-            if (!lore.contains("§6Swiftness I")) {
-                lore.add("§6Swiftness I");
-            }
-
-            meta.setLore(lore);
-            item.setItemMeta(meta);
+    public void applyEffect(Player player, LivingEntity target, ItemStack item) {
+        if (!player.hasPotionEffect(PotionEffectType.SPEED)) {
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0, true, false));
         }
-    }
-
-    @Override
-    public boolean isAppliedTo(ItemStack item) {
-        if (item.hasItemMeta()) {
-            ItemMeta meta = item.getItemMeta();
-            return meta != null && meta.hasLore() && meta.getLore().contains("§6Swiftness I");
-        }
-        return false;
     }
 }

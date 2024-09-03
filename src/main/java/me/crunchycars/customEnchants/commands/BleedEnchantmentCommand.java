@@ -1,5 +1,6 @@
-package me.crunchycars.customEnchants;
+package me.crunchycars.customEnchants.commands;
 
+import me.crunchycars.customEnchants.BleedEnchantment;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,16 +13,16 @@ import java.util.Arrays;
 
 public class BleedEnchantmentCommand implements CommandExecutor {
 
-    private final int tier;
+    private final BleedEnchantment enchantment;
 
-    public BleedEnchantmentCommand(int tier) {
-        this.tier = tier;
+    public BleedEnchantmentCommand(BleedEnchantment enchantment) {
+        this.enchantment = enchantment;
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("This command can only be run by a player.");
+            sender.sendMessage("Only players can use this command.");
             return true;
         }
 
@@ -51,16 +52,16 @@ public class BleedEnchantmentCommand implements CommandExecutor {
         ItemStack book = new ItemStack(Material.ENCHANTED_BOOK);
         ItemMeta meta = book.getItemMeta();
         if (meta != null) {
-            meta.setDisplayName("§eBleed " + tier);
+            meta.setDisplayName(enchantment.getName());
             meta.setLore(Arrays.asList(
                     "§7Success Rate: §a" + successRate + "%",
-                    "§7Has a chance of applying the bleed effect when hitting a target."
+                    "§7Has a chance to apply bleed on your opponent"
             ));
             book.setItemMeta(meta);
         }
 
         player.getInventory().addItem(book);
-        player.sendMessage("§aYou have received a Bleed " + tier + " enchantment book with " + successRate + "% success rate.");
+        player.sendMessage("§aYou have received a " + enchantment.getName() + " enchantment book with " + successRate + "% success rate.");
 
         return true;
     }

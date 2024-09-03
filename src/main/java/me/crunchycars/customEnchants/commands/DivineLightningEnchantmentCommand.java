@@ -1,5 +1,6 @@
-package me.crunchycars.customEnchants;
+package me.crunchycars.customEnchants.commands;
 
+import me.crunchycars.customEnchants.DivineLightningEnchantment;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,24 +11,24 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
 
-public class VitalityEnchantmentCommand implements CommandExecutor {
+public class DivineLightningEnchantmentCommand implements CommandExecutor {
 
-    private final int tier;
+    private final DivineLightningEnchantment enchantment;
 
-    public VitalityEnchantmentCommand(int tier) {
-        this.tier = tier;
+    public DivineLightningEnchantmentCommand(DivineLightningEnchantment enchantment) {
+        this.enchantment = enchantment;
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("This command can only be run by a player.");
+            sender.sendMessage("Only players can use this command.");
             return true;
         }
 
         Player player = (Player) sender;
 
-        if (!player.hasPermission("vitality.enchant")) {
+        if (!player.hasPermission("divine.lightning.enchant")) {
             player.sendMessage("§cYou do not have permission to use this command.");
             return true;
         }
@@ -51,16 +52,16 @@ public class VitalityEnchantmentCommand implements CommandExecutor {
         ItemStack book = new ItemStack(Material.ENCHANTED_BOOK);
         ItemMeta meta = book.getItemMeta();
         if (meta != null) {
-            meta.setDisplayName("§6Vitality " + tier);
+            meta.setDisplayName(enchantment.getName());
             meta.setLore(Arrays.asList(
                     "§7Success Rate: §a" + successRate + "%",
-                    "§7Grants additional health when applied to armor"
+                    "§7Has a chance to strike your target with lightning."
             ));
             book.setItemMeta(meta);
         }
 
         player.getInventory().addItem(book);
-        player.sendMessage("§aYou have received a Vitality " + tier + " enchantment book with " + successRate + "% success rate.");
+        player.sendMessage("§aYou have received a " + enchantment.getName() + " enchantment book with " + successRate + "% success rate.");
 
         return true;
     }
