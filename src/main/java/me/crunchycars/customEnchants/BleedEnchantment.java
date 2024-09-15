@@ -22,11 +22,11 @@ public class BleedEnchantment extends CustomEnchantment {
     public boolean canApplyTo(Material material) {
         switch (getTier()) {
             case 1:
-                return isAnySwordOrAxe(material); // Bleed I can be applied to any sword or axe
+                return isAnyAxe(material); // Bleed I can be applied to any sword or axe
             case 2:
-                return isIronOrAboveSwordOrAxe(material); // Bleed II can be applied to iron and above swords/axes
+                return isIronOrAboveAxe(material); // Bleed II can be applied to iron and above swords/axes
             case 3:
-                return isDiamondOrAboveSwordOrAxe(material); // Bleed III can be applied to diamond and above swords/axes
+                return isDiamondOrAboveAxe(material); // Bleed III can be applied to diamond and above swords/axes
             default:
                 return false;
         }
@@ -39,25 +39,28 @@ public class BleedEnchantment extends CustomEnchantment {
             int duration = getBleedDuration(getTier());
             startBleedTask(target, duration);
 
-            player.sendMessage("§eYou have applied Bleed " + getTier() + " to " + target.getName() + "!");
             if (target instanceof Player) {
                 Player targetPlayer = (Player) target;
-                targetPlayer.sendMessage("§cYou have been hit with Bleed " + getTier() + " by " + player.getName() + "!");
+                targetPlayer.sendMessage("§c§l(!) §cYou have been hit with Bleed " + getTier() + " by " + player.getName() + "!");
             }
         }
     }
 
-    private boolean isAnySwordOrAxe(Material material) {
-        return material.name().endsWith("_SWORD") || material.name().endsWith("_AXE");
+    public static boolean isTargetBleeding(LivingEntity target) {
+        return bleedTasks.containsKey(target.getUniqueId());
     }
 
-    private boolean isIronOrAboveSwordOrAxe(Material material) {
-        return material == Material.IRON_SWORD || material == Material.DIAMOND_SWORD || material == Material.NETHERITE_SWORD ||
+    private boolean isAnyAxe(Material material) {
+        return  material.name().endsWith("_AXE");
+    }
+
+    private boolean isIronOrAboveAxe(Material material) {
+        return
                 material == Material.IRON_AXE || material == Material.DIAMOND_AXE || material == Material.NETHERITE_AXE;
     }
 
-    private boolean isDiamondOrAboveSwordOrAxe(Material material) {
-        return material == Material.DIAMOND_SWORD || material == Material.NETHERITE_SWORD ||
+    private boolean isDiamondOrAboveAxe(Material material) {
+        return
                 material == Material.DIAMOND_AXE || material == Material.NETHERITE_AXE;
     }
 
@@ -108,11 +111,12 @@ public class BleedEnchantment extends CustomEnchantment {
         @Override
         public void run() {
             if (remainingTime <= 0 || target.isDead()) {
+                bleedTasks.remove(target.getUniqueId());
                 this.cancel();
                 return;
             }
 
-            double damage = target.getHealth() * 0.02;
+            double damage = Math.max(0.3, target.getHealth() * 0.01);  // Apply incremental damage to prevent spikes
             target.damage(damage);
             remainingTime -= 20;
         }

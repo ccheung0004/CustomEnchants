@@ -3,6 +3,7 @@ package me.crunchycars.customEnchants;
 import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
 public abstract class CustomEnchantment {
@@ -37,5 +38,9 @@ public abstract class CustomEnchantment {
             }
         }
         return false;
+    }
+
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event, Player damager, LivingEntity target, ItemStack item) {
+        // Default implementation does nothing, to be overridden by specific enchantments
     }
 }

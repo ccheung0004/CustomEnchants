@@ -15,6 +15,10 @@ public class VitalityEnchantment extends CustomEnchantment {
 
     @Override
     public boolean canApplyTo(Material material) {
+        if (!isArmor(material)) {
+            return false; // Ensure it can only be applied to armor
+        }
+
         switch (getTier()) {
             case 1:
                 return true; // Vitality I can be applied to any armor
@@ -39,6 +43,11 @@ public class VitalityEnchantment extends CustomEnchantment {
                 player.setHealth(newMaxHealth);
             }
         }
+    }
+
+    private boolean isArmor(Material material) {
+        return material.name().endsWith("_HELMET") || material.name().endsWith("_CHESTPLATE") ||
+                material.name().endsWith("_LEGGINGS") || material.name().endsWith("_BOOTS");
     }
 
     private boolean isIronOrAboveArmor(Material material) {

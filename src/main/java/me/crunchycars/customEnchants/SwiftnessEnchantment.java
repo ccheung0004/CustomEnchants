@@ -4,10 +4,12 @@ import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 public class SwiftnessEnchantment extends CustomEnchantment {
+
+    // Default Minecraft player walk speed is 0.2
+    private static final float BASE_WALK_SPEED = 0.2f;
+    private static final float SWIFTNESS_SPEED_BOOST = 0.1f; // Increase the speed boost per tier
 
     public SwiftnessEnchantment() {
         super("§6Swiftness 1", 1);
@@ -20,8 +22,20 @@ public class SwiftnessEnchantment extends CustomEnchantment {
 
     @Override
     public void applyEffect(Player player, LivingEntity target, ItemStack item) {
-        if (!player.hasPotionEffect(PotionEffectType.SPEED)) {
-            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 0, true, false));
+        // Calculate the new walk speed based on the enchantment's tier
+        applyWalkSpeed(player);
+    }
+
+    // Apply walk speed based on Swiftness enchantment
+    public static void applyWalkSpeed(Player player) {
+        float newWalkSpeed = BASE_WALK_SPEED + SWIFTNESS_SPEED_BOOST;
+        if (player.getWalkSpeed() != newWalkSpeed) {
+            player.setWalkSpeed(newWalkSpeed);
         }
+    }
+
+    // Reset walk speed to default when removing boots
+    public static void resetWalkSpeed(Player player) {
+        player.setWalkSpeed(BASE_WALK_SPEED);
     }
 }

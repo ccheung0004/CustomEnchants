@@ -2,7 +2,12 @@ name: CustomEnchants
 version: 1.0
 api-version: 1.13
 main: me.crunchycars.customEnchants.CustomEnchants
+
 commands:
+  lifesteal:
+    description: "Gives the player a Lifesteal enchanted book with a specified success rate."
+    usage: "/lifesteal <tier> <successRate>"
+    permission: swiftness.enchant
   swiftnessEnchant:
     description: "Gives the player a Swiftness I enchanted book with a specified success rate."
     usage: "/swiftnessEnchant <successRate>"
@@ -10,56 +15,318 @@ commands:
   vitality1:
     description: "Gives the player a Vitality I enchanted book with a specified success rate."
     usage: "/vitality1 <successRate>"
-    permission: vitality.enchant
+    permission: swiftness.enchant
   vitality2:
     description: "Gives the player a Vitality II enchanted book with a specified success rate."
     usage: "/vitality2 <successRate>"
-    permission: vitality.enchant
+    permission: swiftness.enchant
   vitality3:
     description: "Gives the player a Vitality III enchanted book with a specified success rate."
     usage: "/vitality3 <successRate>"
-    permission: vitality.enchant
+    permission: swiftness.enchant
   bleed1:
     description: "Gives the player a Bleed I enchanted book."
     usage: "/bleed1 <successRate>"
-    permission: bleed.enchant
+    permission: swiftness.enchant
   bleed2:
     description: "Gives the player a Bleed II enchanted book."
     usage: "/bleed2 <successRate>"
-    permission: bleed.enchant
+    permission: swiftness.enchant
   bleed3:
     description: "Gives the player a Bleed III enchanted book."
     usage: "/bleed3 <successRate>"
-    permission: bleed.enchant
+    permission: swiftness.enchant
   silence1:
     description: "Gives the player a Silence I enchanted book."
     usage: "/silence1 <successRate>"
-    permission: silence.enchant
+    permission: swiftness.enchant
   silence2:
     description: "Gives the player a Silence II enchanted book."
     usage: "/silence2 <successRate>"
-    permission: silence.enchant
+    permission: swiftness.enchant
   silence3:
     description: "Gives the player a Silence III enchanted book."
     usage: "/silence3 <successRate>"
-    permission: silence.enchant
+    permission: swiftness.enchant
   divineLightning:
     description: "Gives the player a Divine Lightning enchanted book."
     usage: "/divineLightning <successRate>"
-    permission: divineLightning.enchant
+    permission: swiftness.enchant
+  erudition1:
+    description: "Gives the player an Erudition I enchanted book with a specified success rate."
+    usage: "/erudition1 <successRate>"
+    permission: swiftness.enchant
+  erudition2:
+    description: "Gives the player an Erudition II enchanted book with a specified success rate."
+    usage: "/erudition2 <successRate>"
+    permission: swiftness.enchant
+  antiGank1:
+    description: "Gives the player an Anti Gank I enchanted book with a specified success rate."
+    usage: "/antiGank1 <successRate>"
+    permission: swiftness.enchant
+  antiGank2:
+    description: "Gives the player an Anti Gank II enchanted book with a specified success rate."
+    usage: "/antiGank2 <successRate>"
+    permission: swiftness.enchant
+  antiGank3:
+    description: "Gives the player an Anti Gank III enchanted book with a specified success rate."
+    usage: "/antiGank3 <successRate>"
+    permission: swiftness.enchant
+  obliterate1:
+    description: "Gives the player an Obliterate I enchanted book with a specified success rate."
+    usage: "/obliterate1 <successRate>"
+    permission: swiftness.enchant
+  obliterate2:
+    description: "Gives the player an Obliterate II enchanted book with a specified success rate."
+    usage: "/obliterate2 <successRate>"
+    permission: swiftness.enchant
+  obliterate3:
+    description: "Gives the player an Obliterate III enchanted book with a specified success rate."
+    usage: "/obliterate3 <successRate>"
+    permission: swiftness.enchant
+  hemorrhage1:
+    description: "Gives the player a Hemorrhage I enchanted book with a specified success rate."
+    usage: "/hemorrhage1 <successRate>"
+    permission: swiftness.enchant
+  hemorrhage2:
+    description: "Gives the player a Hemorrhage II enchanted book with a specified success rate."
+    usage: "/hemorrhage2 <successRate>"
+    permission: swiftness.enchant
+  cripplingStrike1:
+    description: "Gives the player a Crippling Strike I enchanted book with a specified success rate."
+    usage: "/cripplingStrike1 <successRate>"
+    permission: swiftness.enchant
+  cripplingStrike2:
+    description: "Gives the player a Crippling Strike II enchanted book with a specified success rate."
+    usage: "/cripplingStrike2 <successRate>"
+    permission: swiftness.enchant
+  cripplingStrike3:
+    description: "Gives the player a Crippling Strike III enchanted book with a specified success rate."
+    usage: "/cripplingStrike3 <successRate>"
+    permission: swiftness.enchant
+  trap1:
+    description: "Gives the player a Trap I enchanted book with a specified success rate."
+    usage: "/trap1 <successRate>"
+    permission: swiftness.enchant
+  trap2:
+    description: "Gives the player a Trap II enchanted book with a specified success rate."
+    usage: "/trap2 <successRate>"
+    permission: swiftness.enchant
+  aegis1:
+    description: "Gives the player an Aegis I enchanted book"
+    usage: "/aegis1 <successRate>"
+    permission: swiftness.enchant
+  aegis2:
+    description: "Gives the player an Aegis II enchanted book"
+    usage: "/aegis2 <successRate>"
+    permission: swiftness.enchant
+  aegis3:
+    description: "Gives the player an Aegis III enchanted book"
+    usage: "/aegis3 <successRate>"
+    permission: swiftness.enchant
+  frenzy1:
+    description: "Gives the player a Frenzy Tier 1 enchantment book."
+    usage: "/frenzy1 <successRate>"
+    permission: swiftness.enchant
+  frenzy2:
+    description: "Gives the player a Frenzy Tier 2 enchantment book."
+    usage: "/frenzy2 <successRate>"
+    permission: swiftness.enchant
+  frenzy3:
+    description: "Gives the player a Frenzy Tier 3 enchantment book."
+    usage: "/frenzy3 <successRate>"
+    permission: swiftness.enchant
+  desperation1:
+    description: "Gives the player a desperation 1 enchantment book."
+    usage: "/desperation1 <successRate>"
+    permission: swiftness.enchant
+  desperation2:
+    description: "Gives the player a desperation 2 enchantment book."
+    usage: "/desperation2 <successRate>"
+    permission: swiftness.enchant
+  desperation3:
+    description: "Gives the player a desperation 3 enchantment book."
+    usage: "/desperation3 <successRate>"
+    permission: swiftness.enchant
+  coupdegrace1:
+    description: "Gives the player a cdg 1 enchantment book."
+    usage: "/coupdegrace1 <successRate>"
+    permission: swiftness.enchant
+  coupdegrace2:
+    description: "Gives the player a cdg 2 enchantment book."
+    usage: "/coupdegrace2 <successRate>"
+    permission: swiftness.enchant
+  coupdegrace3:
+    description: "Gives the player a cdg3 enchantment book."
+    usage: "/coupdegrace3 <successRate>"
+    permission: swiftness.enchant
+  riposte1:
+    description: "gives the players a riposte 1 enchant book"
+    usage: "/riposte1 <successRate>"
+    permission: swiftness.enchant
+  riposte2:
+    description: "gives the players a riposte 2 enchant book"
+    usage: "/riposte2 <successRate>"
+    permission: swiftness.enchant
+  riposte3:
+    description: "gives the players a riposte 3 enchant book"
+    usage: "/riposte3 <successRate>"
+    permission: swiftness.enchant
+
+  tank1:
+    description: "gives tank 1 book"
+    usage: "/tank1 <successRate>"
+    permission: swiftness.enchant
+  tank2:
+    description: "gives tank 2 book"
+    usage: "/tank2 <successRate>"
+    permission: swiftness.enchant
+  armored1:
+    description: "gives armored 1 book"
+    usage: "/armored1 <successRate>"
+    permission: swiftness.enchant
+  armored2:
+    description: "gives armored 2 book"
+    usage: "/armored2 <successRate>"
+    permission: swiftness.enchant
+  laststand1:
+    description: "gives last stand 1"
+    usage: "/laststand1 <successRate>"
+    permission: swiftness.enchant
+  laststand2:
+    description: "gives last stand 2"
+    usage: "/laststand2 <successRate>"
+    permission: swiftness.enchant
+  drunk1:
+    description: "drunk 1 book"
+    usage: "/drunk1 <successRate>"
+    permission: swiftness.enchant
+  drunk2:
+    description: "drunk 2 book"
+    usage: "/drunk2 <successRate>"
+    permission: swiftness.enchant
+  ignite1:
+    description: "ignite 1 book"
+    usage: "/ignite1 <successRate>"
+    permission: swiftness.enchant
+  ignite2:
+    description: "ignite 2 book"
+    usage: "/ignite2 <successRate>"
+    permission: swiftness.enchant
+  ignite3:
+    description: "ignite 3 book"
+    usage: "/ignite3 <successRate>"
+    permission: swiftness.enchant
+  solitude1:
+    description: "solitude 1 book"
+    usage : "/solitude1 <successRate>"
+    permission: swiftness.enchant
+  solitude2:
+    description: "solitude 2 book"
+    usage : "/solitude2 <successRate>"
+    permission: swiftness.enchant
+  solitude3:
+    description: "solitude 3 book"
+    usage: "/solitude3 <successRate>"
+    permission: swiftness.enchant
+  superman:
+    description: "Gives the player a Superman enchantment book."
+    usage: "/superman <successRate>"
+    permission: swiftness.enchant
+  apprehend1:
+    description: "apprehend 1 book"
+    usage: "/apprehend1 <successRate>"
+    permission: swiftness.enchant
+  apprehend2:
+    description: "apprehend 2 book"
+    usage: "/apprehend2 <successRate>"
+    permission: swiftness.enchant
+  apprehend3:
+    description: "apprehend 3 book"
+    usage: "/apprehend3 <successRate>"
+    permission: swiftness.enchant
+  famine1:
+    description: "Gives a Famine I enchantment book."
+    usage: "/famine1 <successRate>"
+    permission: swiftness.enchant
+  famine2:
+    description: "Gives a Famine II enchantment book."
+    usage: "/famine2 <successRate>"
+    permission: swiftness.enchant
+  famine3:
+    description: "Gives a Famine III enchantment book."
+    usage: "/famine3 <successRate>"
+    permission: swiftness.enchant
+  hex1:
+    description: "Gives a Hex I enchantment book."
+    usage: "/hex1 <successRate>"
+    permission: swiftness.enchant
+  hex2:
+    description: "Gives a Hex II enchantment book."
+    usage: "/hex2 <successRate>"
+    permission: swiftness.enchant
+  hex3:
+    description: "Gives a Hex III enchantment book."
+    usage: "/hex3 <successRate>"
+    permission: swiftness.enchant
+  springs:
+    description: "Gives a springs enchantment book."
+    usage: "/springs <successRate>"
+    permission: swiftness.enchant
+  swordsman1:
+    description: "Swords 1 book"
+    usage: "/swordsman1 <successRate>"
+    permission: swiftness.enchant
+  swordsman2:
+    description: "Swords 2 book"
+    usage: "/swordsman2 <successRate>"
+    permission: swiftness.enchant
+  swordsman3:
+    description: "Swords 3 book"
+    usage: "/swordsman3 <successRate>"
+    permission: swiftness.enchant
+  axeman1:
+    description: "axeman 1 book"
+    usage: "/axeman1 <successRate>"
+    permission: swiftness.enchant
+  axeman2:
+    description: "axeman 2 book"
+    usage: "/axeman2 <successRate>"
+    permission: swiftness.enchant
+  axeman3:
+    description: "axeman 3 book"
+    usage: "/axeman3 <successRate>"
+    permission: swiftness.enchant
+  houdini1:
+    description: "houdini 1 book"
+    usage: "/houdini1 <successRate>"
+    permission: swiftness.enchant
+  houdini2:
+    description: "houdini 3 book"
+    usage: "/houdini2 <successRate>"
+    permission: swiftness.enchant
+  leviathansbreath:
+    description: "Gives the player a Leviathan's Breath enchantment book."
+    usage: "/leviathansbreath <successRate>"
+    permission: swiftness.enchant
+  cleave1:
+    description: "gives cleave 1 book"
+    usage: "/cleave1 <successRate>"
+    permission: swiftness.enchant
+  cleave2:
+    description: "gives cleave 2 book"
+    usage: "/cleave2 <successRate>"
+    permission: swiftness.enchant
+  cleave3:
+    description: "gives cleave 3 book"
+    usage: "/cleave3 <successRate>"
+    permission: swiftness.enchant
+  party:
+    description: "Party system commands."
+    aliases: [ p ]
+
 permissions:
   swiftness.enchant:
     description: "Allows the use of the Swiftness enchantment command."
     default: op
-  vitality.enchant:
-    description: "Allows the use of the Vitality enchantment commands."
-    default: op
-  bleed.enchant:
-    description: "Allows the use of the Bleed enchantment commands."
-    default: op
-  silence.enchant:
-    description: "Allows the use of the Silence enchantment command."
-    default: op
-  divineLightning.enchant:
-    description: "Allows the use of the Divine Lightning enchantment command."
-    default: op
+
