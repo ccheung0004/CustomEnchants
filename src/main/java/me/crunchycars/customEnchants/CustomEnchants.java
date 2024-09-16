@@ -176,7 +176,7 @@ public final class CustomEnchants extends JavaPlugin {
                 for (UUID memberUUID : party.getMembers()) {
                     Player member = Bukkit.getPlayer(memberUUID);
                     if (member != null && member.isOnline()) {
-                        Location particleLocation = member.getLocation().add(0, 2.5, 0); // Adjust height above the head
+                        Location particleLocation = member.getLocation().add(0, 4, 0); // Adjust height above the head
 
                         // Spawn the particles for the player
                         player.spawnParticle(Particle.VILLAGER_HAPPY, particleLocation, 10, 0.3, 1, 0.3, 0.05);

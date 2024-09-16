@@ -18,7 +18,7 @@ public class AntiGankEnchantment extends CustomEnchantment {
     private static final Map<UUID, Long> cooldowns = new HashMap<>();
     private static final Map<UUID, Integer> hitCounters = new HashMap<>();
     private static final Map<UUID, Long> lastHitTimes = new HashMap<>();
-    private static final int REQUIRED_PLAYERS_NEARBY = 4; // Minimum number of nearby players
+    private static final int REQUIRED_PLAYERS_NEARBY = 5; // Minimum number of nearby players
     private static final double NEARBY_RADIUS = 10.0; // Radius within which players need to be
 
     private final int tier;
