@@ -80,6 +80,28 @@ public class CustomEnchantmentManager {
     public static final AxemanEnchantment AXEMAN_TIER_3 = new AxemanEnchantment(3);
     public static final HoudiniEnchantment HOUDINI_TIER_1 = new HoudiniEnchantment(1);
     public static final HoudiniEnchantment HOUDINI_TIER_2 = new HoudiniEnchantment(2);
+    public static final BackstabEnchantment BACKSTAB_TIER_1 = new BackstabEnchantment(1);
+    public static final BackstabEnchantment BACKSTAB_TIER_2 = new BackstabEnchantment(2);
+    public static final BackstabEnchantment BACKSTAB_TIER_3 = new BackstabEnchantment(3);
+    public static final ArsonistEnchantment ARSONIST_TIER_1 = new ArsonistEnchantment(1);
+    public static final ArsonistEnchantment ARSONIST_TIER_2 = new ArsonistEnchantment(2);
+    public static final ArsonistEnchantment ARSONIST_TIER_3 = new ArsonistEnchantment(3);
+    public static final HeavyEnchantment HEAVY_TIER_1 = new HeavyEnchantment(1);
+    public static final HeavyEnchantment HEAVY_TIER_2 = new HeavyEnchantment(2);
+    public static final HeavyEnchantment HEAVY_TIER_3 = new HeavyEnchantment(3);
+    public static final JellyLegsEnchantment JELLY_LEGS_TIER_1 = new JellyLegsEnchantment(1);
+    public static final JellyLegsEnchantment JELLY_LEGS_TIER_2 = new JellyLegsEnchantment(2);
+    public static final JellyLegsEnchantment JELLY_LEGS_TIER_3 = new JellyLegsEnchantment(3);
+    public static final AssassinEnchantment ASSASSIN_TIER_1 = new AssassinEnchantment(1);
+    public static final AssassinEnchantment ASSASSIN_TIER_2 = new AssassinEnchantment(2);
+    public static final AssassinEnchantment ASSASSIN_TIER_3 = new AssassinEnchantment(3);
+    public static final PoisonEnchantment POISON_TIER_1 = new PoisonEnchantment(1);
+    public static final PoisonEnchantment POISON_TIER_2 = new PoisonEnchantment(2);
+    public static final PoisonEnchantment POISON_TIER_3 = new PoisonEnchantment(3);
+    public static final ConfusionEnchantment CONFUSION_TIER_1 = new ConfusionEnchantment(1);
+    public static final ConfusionEnchantment CONFUSION_TIER_2 = new ConfusionEnchantment(2);
+    public static final ConfusionEnchantment CONFUSION_TIER_3 = new ConfusionEnchantment(3);
+
 
     public static DivineLightningEnchantment DIVINE_LIGHTNING;
     public static LeviathansBreathEnchantment LEVIATHANS_BREATH;
@@ -182,6 +204,28 @@ public class CustomEnchantmentManager {
         ENCHANTMENTS.add(SWORDSMAN_TIER_3);
         ENCHANTMENTS.add(HOUDINI_TIER_1);
         ENCHANTMENTS.add(HOUDINI_TIER_2);
+        ENCHANTMENTS.add(BACKSTAB_TIER_1);
+        ENCHANTMENTS.add(BACKSTAB_TIER_2);
+        ENCHANTMENTS.add(BACKSTAB_TIER_3);
+        ENCHANTMENTS.add(ARSONIST_TIER_1);
+        ENCHANTMENTS.add(ARSONIST_TIER_2);
+        ENCHANTMENTS.add(ARSONIST_TIER_3);
+        ENCHANTMENTS.add( HEAVY_TIER_1);
+        ENCHANTMENTS.add( HEAVY_TIER_2);
+        ENCHANTMENTS.add( HEAVY_TIER_3);
+        ENCHANTMENTS.add(JELLY_LEGS_TIER_1);
+        ENCHANTMENTS.add(JELLY_LEGS_TIER_2);
+        ENCHANTMENTS.add(JELLY_LEGS_TIER_3);
+        ENCHANTMENTS.add(ASSASSIN_TIER_1);
+        ENCHANTMENTS.add(ASSASSIN_TIER_2);
+        ENCHANTMENTS.add(ASSASSIN_TIER_3);
+        ENCHANTMENTS.add(POISON_TIER_1);
+        ENCHANTMENTS.add(POISON_TIER_2);
+        ENCHANTMENTS.add(POISON_TIER_3);
+        ENCHANTMENTS.add(CONFUSION_TIER_1);
+        ENCHANTMENTS.add(CONFUSION_TIER_2);
+        ENCHANTMENTS.add(CONFUSION_TIER_3);
+
     }
 
     public static List<CustomEnchantment> getAllEnchantments() {

@@ -324,6 +324,82 @@ commands:
   party:
     description: "Party system commands."
     aliases: [ p ]
+  backstab1:
+    description: "gives backstab 1 book"
+    usage: "/backstab1 <successRate>"
+    permission: swiftness.enchant
+  backstab2:
+    description: "gives backstab 2 book"
+    usage: "/backstab2 <successRate>"
+    permission: swiftness.enchant
+  backstab3:
+    description: "gives backstab 3 book"
+    usage: "/backstab3 <successRate>"
+    permission: swiftness.enchant
+  arsonist1:
+    description: "Gives an Arsonist 1 enchantment book"
+    usage: "/arsonist1 <successRate>"
+    permission: swiftness.enchant
+  arsonist2:
+      description: "Gives an Arsonist 2 enchantment book"
+      usage: "/arsonist2 <successRate>"
+      permission: swiftness.enchant
+  arsonist3:
+      description: "Gives an Arsonist 3 enchantment book"
+      usage: "/arsonist3 <successRate>"
+      permission: swiftness.enchant
+  heavy1:
+    description: "Gives a heavy 1 enchantment book"
+    usage: "/heavy1 <successRate>"
+    permission: swiftness.enchant
+  heavy2:
+    description: "Gives a heavy 2 enchantment book"
+    usage: "/heavy2 <successRate>"
+    permission: swiftness.enchant
+  heavy3:
+    description: "Gives a heavy 3 enchantment book"
+    usage: "/heavy3 <successRate>"
+    permission: swiftness.enchant
+  jellylegs1:
+    description: "gives jelly legs 1 book"
+    usage: "/jellylegs1 <successRate>"
+    permission: swiftness.enchant
+  jellylegs2:
+    description: "gives jelly legs 2 book"
+    usage: "/jellylegs2 <successRate>"
+    permission: swiftness.enchant
+  jellylegs3:
+    description: "gives jelly legs 3 book"
+    usage: "/jellylegs3 <successRate>"
+    permission: swiftness.enchant
+  assassin1:
+    description: "gives assassin 1 book"
+    usage: "/assassin1 <successRate>"
+    permission: swiftness.enchant
+  assassin2:
+    description: "gives assassin 2 book"
+    usage: "/assassin2 <successRate>"
+    permission: swiftness.enchant
+  assassin3:
+    description: "gives assassin 3 book"
+    usage: "/assassin3 <successRate>"
+    permission: swiftness.enchant
+  poison1:
+    description: "gives poison 1 book"
+    usage: "/poison1 <successRate>"
+    permission: swiftness.enchant
+  confusion1:
+    description: "Gives the player a Confusion I enchanted book with a specified success rate."
+    usage: "/confusion1 <successRate>"
+    permission: swiftness.enchant
+  confusion2:
+    description: "Gives the player a Confusion II enchanted book with a specified success rate."
+    usage: "/confusion2 <successRate>"
+    permission: swiftness.enchant
+  confusion3:
+    description: "Gives the player a Confusion III enchanted book with a specified success rate."
+    usage: "/confusion3 <successRate>"
+    permission: swiftness.enchant
 
 permissions:
   swiftness.enchant:
